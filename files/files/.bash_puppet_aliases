@@ -1,0 +1,22 @@
+# puppet aliases
+
+alias papply='sudo /opt/puppet/bin/puppet apply'
+alias papplynoop='sudo puppet apply --noop'
+alias pagent='sudo /opt/puppet/bin/puppet agent' # <-- useful for --configprint, ect....
+alias pagentt='sudo /opt/puppet/bin/puppet agent -t'
+alias pagentnoop='sudo /opt/puppet/bin/puppet agent -t --noop'
+alias pestart='cd /etc/init.d ;for x in pe-*; do sudo /sbin/service $x start; done; cd'
+alias pestop='cd /etc/init.d ;for x in pe-*; do sudo /sbin/service $x stop; done; cd'
+alias pestatus='cd /etc/init.d ;for x in pe-*; do sudo /sbin/service $x status; done; cd'
+alias perestart='cd /etc/init.d ;for x in pe-*; do sudo /sbin/service $x restart; done; cd'
+alias sumco='sudo -i -u peadmin' # <-- used to run mco(MCollective) commands
+alias modpath='cd /etc/puppetlabs/puppet/modules'
+alias manpath='cd /etc/puppetlabs/puppet/manifests'
+alias penv='cd /etc/puppetlabs/puppet/environments'
+
+# Learning Puppet Info
+#alias learnpuppeturl='echo https://172.16.156.133'
+#alias learnpuppeturlusr='echo puppet@example.com'
+#alias learnpuppeturlpwd='puppetlabs'
+#alias learnpuppetpwd='echo learningpuppet'
+#alias learnpuppet='ssh root@172.16.156.133'

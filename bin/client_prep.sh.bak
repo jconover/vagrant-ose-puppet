@@ -1,0 +1,77 @@
+#!/bin/bash -eux
+
+################### Update System ##########################
+$(which top > /dev/null 2>&1)
+FOUND_TOP=$?
+if [ "$FOUND_TOP" -ne '0' then
+  echo "===> Attempting to upgrade the system."
+  $(which apt-get > /dev/null 2>&1)
+  FOUND_APT=$?
+  $(which yum > /dev/null 2>&1)
+  FOUND_YUM=$?
+
+  if [ "${FOUND_YUM}" -eq '0' ]; then
+    sudo yum -q -y yum update
+    echo '===> system updated.'
+    echo " "
+  else [ "${FOUND_APT}" -eq '0' ]; then
+    sudo apt-get -q -y update
+    sudo apt-get -q -y upgrade
+    echo '===> system updated.'
+    echo " "
+  else
+    echo 'No package manager available. You may need to manually update your system.'
+  if
+else
+  echo 'System Updated'
+fi
+
+############## VIM ###################
+$(which vi> /dev/null 2>&1)
+FOUND_VIM=$?
+if [ "$FOUND_VIM" -ne '0' ]; then
+  echo '===> Attempting to install Ansible client.'
+  $(which apt-get > /dev/null 2>&1)
+  FOUND_APT=$?
+  $(which yum > /dev/null 2>&1)
+  FOUND_YUM=$?
+
+  if [ "${FOUND_YUM}" -eq '0' ]; then
+    sudo yum -q -y makecache
+    sudo yum -q -y install vim-enhanced
+    echo '===> ansible client installed.'
+  else [ "${FOUND_APT}" -eq '0' ]; then
+    sudo apt-get -q -y update
+    sudo apt-get -q -y install vim
+    echo '===> ansible client installed.'
+  else
+    echo 'No package installer available. You may need to install vim manually.'
+  if
+else
+  echo 'vim found.'
+fi
+
+############## Ansible ###################
+$(which python-simplejson > /dev/null 2>&1)
+FOUND_PSJ=$?
+if [ "$FOUND_PSJ" -ne '0' ]; then
+  echo '===> Attempting to install Ansible client.'
+  $(which apt-get > /dev/null 2>&1)
+  FOUND_APT=$?
+  $(which yum > /dev/null 2>&1)
+  FOUND_YUM=$?
+
+  if [ "${FOUND_YUM}" -eq '0' ]; then
+    sudo yum -q -y makecache
+    sudo yum -q -y install python-simplejson
+    echo '===> ansible client installed.'
+  else [ "${FOUND_APT}" -eq '0' ]; then
+    sudo apt-get -q -y update
+    sudo apt-get -q -y install python-simplejson
+    echo '===> ansible client installed.'
+  else
+    echo 'No package installer available. You may need to install python-simplejson manually.'
+  if
+else
+  echo 'python-simplejson found.'
+fi

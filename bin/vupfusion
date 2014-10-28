@@ -1,0 +1,127 @@
+#!/bin/bash
+
+show_server_menu() {
+	echo ""
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-------"
+       echo " Which server would you like Vagrant to bring UP?"
+       echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--"
+	echo "  1. master"
+	echo "  2. node01"
+	echo "  3. node02"
+	echo "  4. web01"
+	echo "  5. app01"
+	echo "  6. app02"
+	echo "  7. db01"
+	echo "  8. centos6a"
+	echo "  9. centos6b"
+	echo " 10. centos7a"
+	echo " 11. centos7b"
+	echo " 12. ubuntu12a"
+	echo " 13. ubuntu12b"
+	echo " 14. ubuntu14a"
+	echo " 15. ubuntu14b"
+	echo " 16. debian7a"
+	echo " 17. debian7b"
+	echo " 18. debian6a"
+	echo " 19. debian6b"
+	echo ""
+	echo ""
+	echo "_______"
+	echo " 0. Exit"
+	echo "Please enter an option [1-19, 0] "
+	read server_opt
+}
+
+show_server_menu
+
+case $server_opt in
+	1) TARGET_SERVER="master";;
+	2) TARGET_SERVER="node01";;
+	3) TARGET_SERVER="node02";;
+	4) TARGET_SERVER="web01";;
+	5) TARGET_SERVER="app01";;
+	6) TARGET_SERVER="app02";;
+	7) TARGET_SERVER="db01";;
+	8) TARGET_SERVER="centos6a";;
+	9) TARGET_SERVER="centos6b";;
+	10) TARGET_SERVER="centos7a";;
+	11) TARGET_SERVER="centos7b";;
+	12) TARGET_SERVER="ubuntu12a";;
+	13) TARGET_SERVER="ubuntu12b";;
+	14) TARGET_SERVER="ubuntu14a";;
+	15) TARGET_SERVER="ubuntu14b";;
+	16) TARGET_SERVER="debian6a";;
+	17) TARGET_SERVER="debian6b";;
+	18) TARGET_SERVER="debian7a";;
+	19) TARGET_SERVER="debian7b";;
+
+	0) echo "Exiting...."
+		exit;;
+	*) echo "$env_opt is an invalid option.  Please select an option between 1-19";
+		echo "Press [enter] key to exit . . .";
+		read enterKey;
+		exit;;
+esac
+
+case $TARGET_SERVER in
+	'master')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'node01')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'node02')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'web01')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'app01')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'app02')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'db01')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'centos6a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'centos6b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'centos7a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'centos7b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'ubuntu12a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'ubuntu12b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'ubuntu14a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'ubuntu14b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'debian6a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'debian6b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'debian7a')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	'debian7b')
+			vagrant up $TARGET_SERVER --provider vmware_fusion
+			;;
+	*)
+			echo "do nothing"
+			;;
+esac

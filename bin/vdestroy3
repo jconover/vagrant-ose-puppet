@@ -1,0 +1,8 @@
+#!/bin/bash
+
+vagrant halt master
+vagrant halt node01
+vagrant halt node02
+vagrant destroy -f master
+vagrant destroy -f node01
+vagrant destroy -f node02

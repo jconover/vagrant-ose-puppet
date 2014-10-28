@@ -1,0 +1,11 @@
+
+ini_setting {'autosign':
+  path    => '/etc/puppet/puppet.conf',
+  section => 'master',
+  setting => 'autosign',
+  value   => 'true',
+}~>
+service {'pe-httpd':
+  ensure => running,
+  enable => true,
+}

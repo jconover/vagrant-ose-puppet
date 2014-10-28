@@ -1,0 +1,7 @@
+#!/bin/bash
+
+vagrant up master --provider virtualbox
+vagrant up web01 --provider virtualbox
+vagrant up app01 --provider virtualbox
+vagrant up app02 --provider virtualbox
+vagrant up db01 --provider virtualbox

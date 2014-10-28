@@ -1,0 +1,7 @@
+#!/bin/bash
+
+vagrant destroy -f master
+vagrant destroy -f web01
+vagrant destroy -f app01
+vagrant destroy -f app02
+vagrant destroy -f db01

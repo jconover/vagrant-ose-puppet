@@ -1,0 +1,5 @@
+#!/bin/bash
+
+vagrant up master --provider virtualbox
+vagrant up node01 --provider virtualbox
+vagrant up node02 --provider virtualbox
